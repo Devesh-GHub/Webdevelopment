@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Percentage or CGPA Input</title>
+</head>
+
+<body>
+  <h2>Select an option:</h2>
+  <form>
+    <input type="radio" name="option" id="percentageOption" onclick="showInput('percentage')"> Percentage
+    <input type="radio" name="option" id="cgpaOption" onclick="showInput('cgpa')"> CGPA
+  </form>
+
+  <div id="inputContainer" style="display: none;">
+    <h3 id="inputLabel"></h3>
+    <input type="number" id="inputField" min="1" max="100" oninput="handleInput()">
+  </div>
+
+  <script>
+    function showInput(option) {
+      const inputContainer = document.getElementById('inputContainer');
+      const inputLabel = document.getElementById('inputLabel');
+      const inputField = document.getElementById('inputField');
+
+      if (option === 'percentage') {
+        inputLabel.innerText = 'Enter the number between 1 to 100:';
+        inputField.min = 1;
+        inputField.max = 100;
+      } else if (option === 'cgpa') {
+        inputLabel.innerText = 'Enter the number between 1 to 10:';
+        inputField.min = 1;
+        inputField.max = 10;
+      }
+
+      inputContainer.style.display = 'block';
+    }
+
+    function handleInput() {
+      const inputField = document.getElementById('inputField').value;
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+

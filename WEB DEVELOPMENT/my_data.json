@@ -1,0 +1,39 @@
+{
+    "name": "Cappadocia Trip",
+    "duration": "3 days",
+    "places": [
+      {
+        "name": "Göreme Open-Air Museum",
+        "description": "Ancient cave churches and frescoes."
+      },
+      {
+        "name": "Sunset Point",
+        "description": "Breathtaking view of the sunset over Cappadocian landscape."
+      },
+      {
+        "name": "Pasabag (Monks Valley)",
+        "description": "Unique fairy chimneys and rock formations."
+      },
+      {
+        "name": "Devrent Valley",
+        "description": "Lunar-like landscape."
+      },
+      {
+        "name": "Ürgüp",
+        "description": "Charming town with local wineries."
+      },
+      {
+        "name": "Love Valley",
+        "description": "Tall, conical rock formations."
+      },
+      {
+        "name": "Kaymaklı Underground City",
+        "description": "Intricate tunnels and rooms carved into the soft rock."
+      },
+      {
+        "name": "Avanos",
+        "description": "Known for its pottery and traditional techniques."
+      }
+    ]
+  }
+  

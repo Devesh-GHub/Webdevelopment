@@ -1,0 +1,111 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a modern and attractive font family */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header Box 1 */
+#box1 {
+    background-color: #6b63ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+}
+
+#head {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#head li {
+    margin-right: 20px;
+}
+
+#head img {
+    width: 24px;
+    height: 24px;
+}
+
+#box1 b {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Header Box 2 */
+#box2 {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+#inBox1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    list-style: none;
+}
+
+#inBox1 img {
+    width: 60px;
+    height: 60px;
+}
+
+#inBox1 a {
+    text-decoration: none;
+    color: #6b63ff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+#inBox1 a:hover {
+    color: #444;
+}
+
+/* College Description Section */
+#college-description {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#college-description h1 {
+    font-size: 36px;
+    color: #6b63ff;
+    margin-bottom: 20px;
+}
+
+#college-description p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Background Image for Box 2 */
+#box2::after {
+    content: " ";
+    position: absolute;
+    background: url('./Images/student_backgroung_img.jpg') no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,700&family=Exo+2:ital,wght@0,500;1,600&family=Geologica:wght@400;500&family=Jomhuria&family=Josefin+Sans:ital,wght@1,300&family=Poppins:wght@600;700&family=Raleway:wght@900&display=swap" rel="stylesheet">
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(7, 7, 35);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        #head{
+            color: cyan;
+            margin-top: 4px;
+            text-shadow: 2px 2px 4px rgb(221, 85, 85);
+            display: block;
+            margin: auto;
+            width: 20%;
+        }
+
+        #progress {
+            position: relative;
+            width: 90%;
+            margin: auto;
+            height: 100px;
+            margin-top: 60px;
+        }
+
+        #progress ul {
+            padding: 0;
+            margin: 0;
+            padding-top: 15px;
+            z-index: 999;
+            position: absolute;
+            width: 100%;
+            margin-top: -40px;
+        }
+
+        #progress ul li::before {
+            content: "";
+            display: block;
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: solid 2px #aaa;
+            transition: all 0.3s;
+        }
+
+        #progress li.favClass::before,
+        #progress li:hover::before {
+            background-color: blueviolet;
+        }
+
+        #progress li {
+            list-style: none;
+            float: left;
+            width: 20%;
+            text-align: center;
+            color: #aaa;
+            text-transform: uppercase;
+            font-size: 11px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.2s;
+            vertical-align: bottom;
+            height: 59px;
+            position: relative;
+        }
+
+        #progress li.step-inner {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            font-size: 14px;
+        }
+
+        #progress li.favClass,
+        #progress li:hover {
+            color: blueviolet;
+        }
+
+        #progress li:after {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 2px;
+            background: #777;
+            margin: auto;
+            border: solid 7px white;
+            border-radius: 50%;
+            margin-top: 10px;
+            box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s;
+        }
+
+        #progress li:hover::after {
+            background: blueviolet;
+        }
+
+        #progress li.favClass::after {
+            background: blueviolet;
+        }
+
+        #progress #line {
+            width: 60%;
+            margin: auto;
+            background: #eee;
+            height: 5px;
+            position: absolute;
+            left: 10%;
+            top: 57%;
+            z-index: 1;
+            border-radius: 50px;
+            transition: all 0.9s;
+        }
+
+        #progress #line-process {
+            content: "";
+            width: 3px;
+            height: 100%;
+            background: blueviolet;
+            background: linear-gradient(to right, blueviolet 0%, #3cb1c5 100%);
+            position: absolute;
+            z-index: 2;
+            border: 50%;
+            transition: all 0.9s;
+        }
+
+        #content {
+            width: 90%;
+            margin: auto;
+            background: #3f3f3f;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .content {
+            padding: 30px 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+        #sub_ul{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+        #sub_ul li{
+            list-style: none;
+        }
+
+        @keyframes moveTimeline {
+            0% {
+                left: 0%;
+            }
+            25% {
+                left: 25%;
+            }
+            50% {
+                left: 50%;
+            }
+            75% {
+                left: 75%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2 id="head">My Contact</h2>
+    <div class="process">
+        <div id="progress">
+            <ul>
+                <li class="step step01 favClass">
+                    <div class="step-inner">Contact Number</div>
+                </li>
+                <li class="step step02">
+                    <div class="step-inner">Instagram</div>
+                </li>
+                <li class="step step03">
+                    <div class="step-inner">Linkedin</div>
+                </li>
+                <li class="step step04">
+                    <div class="step-inner">G-Mail</div>
+                </li>
+            </ul>
+            <div id="line">
+                <div id="line-process"></div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="content subject active">
+                <h2>Phone Number</h2>
+                <p>Contact number: +91 99*********564 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, aspernatur.</p>
+            </div>
+            <div class="content sports">
+                <h2>Instagram</h2>
+                <p>Insta ID: devesh_0204 Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, facere?</p>
+            </div>
+            <div class="content food">
+                <h2>Linkedin</h2>
+                <p>Link: https://www.linkedin.com/in/dev0204 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, aliquid!</p>
+            </div>
+            <div class="content shows">
+                <h2>G-Emain</h2>
+                <p>G-Mail: dev0204@gmail.com Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, nostrum.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        
+        $(document).ready(function () {
+            const $steps = $('.step');
+            const $contentSections = $('.content');
+            const $lineProcess = $('#line-process');
+            
+            const stepWidth = 100 / ($steps.length - 1);
+            
+            $steps.on('click', function () {
+                const index = $steps.index(this);
+                $steps.removeClass('favClass');
+                $contentSections.removeClass('active');
+                const lineProcessWidth = stepWidth * index;
+                
+                $(this).addClass('favClass');
+                $contentSections.eq(index).addClass('active');
+                $lineProcess.css('width', lineProcessWidth + '%');
+            });
+
+            let currentIndex = 0;
+
+            function moveTimeline() {
+                $steps.eq(currentIndex).trigger('click');
+                currentIndex = (currentIndex + 1) % $steps.length;
+            }
+
+            setInterval(moveTimeline, 3000); 
+        });
+    </script>
+</body>
+</html>

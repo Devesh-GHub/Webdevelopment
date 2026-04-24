@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(7, 7, 35);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #progress {
+            position: relative;
+            width: 90%;
+            margin: auto;
+            height: 100px;
+            margin-top: 60px;
+        }
+
+        #progress ul {
+            padding: 0;
+            margin: 0;
+            padding-top: 15px;
+            z-index: 999;
+            position: absolute;
+            width: 100%;
+            margin-top: -40px;
+        }
+
+        #progress ul li::before {
+            content: "";
+            display: block;
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: solid 2px #aaa;
+            transition: all 0.3s;
+        }
+
+        #progress li.favClass::before,
+        #progress li:hover::before {
+            background-color: blueviolet;
+        }
+
+        #progress li {
+            list-style: none;
+            float: left;
+            width: 20%;
+            text-align: center;
+            color: #aaa;
+            text-transform: uppercase;
+            font-size: 11px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.2s;
+            vertical-align: bottom;
+            height: 59px;
+            position: relative;
+        }
+
+        #progress li.step-inner {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            font-size: 14px;
+        }
+
+        #progress li.favClass,
+        #progress li:hover {
+            color: blueviolet;
+        }
+
+        #progress li:after {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 2px;
+            background: #777;
+            margin: auto;
+            border: solid 7px white;
+            border-radius: 50%;
+            margin-top: 10px;
+            box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s;
+        }
+
+        #progress li:hover::after {
+            background: blueviolet;
+        }
+
+        #progress li.favClass::after {
+            background: blueviolet;
+        }
+
+        #progress #line {
+            width: 60%;
+            margin: auto;
+            background: #eee;
+            height: 5px;
+            position: absolute;
+            left: 10%;
+            top: 57%;
+            z-index: 1;
+            border-radius: 50px;
+            transition: all 0.9s;
+        }
+
+        #progress #line-process {
+            content: "";
+            width: 3px;
+            height: 100%;
+            background: blueviolet;
+            background: linear-gradient(to right, blueviolet 0%, #3cb1c5 100%);
+            position: absolute;
+            z-index: 2;
+            border: 50%;
+            transition: all 0.9s;
+        }
+
+        #content {
+            width: 90%;
+            margin: auto;
+            background: #3f3f3f;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .content {
+            padding: 30px 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+        #sub_ul{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+        #sub_ul li{
+            list-style: none;
+        }
+
+        @keyframes moveTimeline {
+            0% {
+                left: 0%;
+            }
+            25% {
+                left: 25%;
+            }
+            50% {
+                left: 50%;
+            }
+            75% {
+                left: 75%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="process">
+        <div id="progress">
+            <ul>
+                <li class="step step01 favClass">
+                    <div class="step-inner">Subject</div>
+                </li>
+                <li class="step step02">
+                    <div class="step-inner">Sports</div>
+                </li>
+                <li class="step step03">
+                    <div class="step-inner">Food item</div>
+                </li>
+                <li class="step step04">
+                    <div class="step-inner">Shows</div>
+                </li>
+            </ul>
+            <div id="line">
+                <div id="line-process"></div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="content subject active">
+                <h2>Subject</h2>
+                <p><ul id="sub_ul" >
+                    <li class="image"><img src="https://cka.collectiva.in/Content/images/CourseImages/9.png" alt="" style="width: 150%;height: 100%;list-style: none;"></li>
+                    <li class="image"><img src="https://lvivity.com/wp-content/uploads/2018/07/ai-product.jpg" alt=""
+                    style="width: 75%;height: 20%;list-style: none;margin-left: 150px;border-radius: 6px;"></li>
+                    <li class="image"><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221222184908/web-development1.png" alt="" style="width: 70%;height: 200%;list-style: none;margin-left: 50px;border-radius: 2px;"></li>
+                </ul></p>
+            </div>
+            <div class="content sports">
+                <h2>Sports</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nisi dolor rem ipsam, minima, molestias aperiam sint amet asperiores earum quia ab fugit odit, velit reprehenderit impedit libero placeat illum.</p>
+            </div>
+            <div class="content food">
+                <h2>Food item</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius possimus amet molestias, id reiciendis iste consequuntur explicabo officiis sapiente illum laudantium ipsam saepe vel minima odio fuga modi illo aut?</p>
+            </div>
+            <div class="content shows">
+                <h2>Shows</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aliquam magnam minima beatae ipsa incidunt, cum numquam libero reiciendis consequuntur, doloribus et blanditiis reprehenderit veritatis asperiores quod qui veniam ea.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // jQuery code for timeline functionality
+        $(document).ready(function () {
+            const $steps = $('.step');
+            const $contentSections = $('.content');
+            const $lineProcess = $('#line-process');
+            
+            const stepWidth = 100 / ($steps.length - 1);
+            
+            $steps.on('click', function () {
+                const index = $steps.index(this);
+                $steps.removeClass('favClass');
+                $contentSections.removeClass('active');
+                const lineProcessWidth = stepWidth * index;
+                
+                $(this).addClass('favClass');
+                $contentSections.eq(index).addClass('active');
+                $lineProcess.css('width', lineProcessWidth + '%');
+            });
+
+            // Automatically move the timeline and display content
+            let currentIndex = 0;
+
+            function moveTimeline() {
+                $steps.eq(currentIndex).trigger('click');
+                currentIndex = (currentIndex + 1) % $steps.length;
+            }
+
+            setInterval(moveTimeline, 3000); // Change the interval as needed
+        });
+    </script>
+</body>
+</html>

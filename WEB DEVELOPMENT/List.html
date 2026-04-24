@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21MID0074_Devesh</title>
+    <style>
+        #basket::before{
+            content: "";
+            position: absolute;
+            background: url("./Images/background_IMG_04.jpg") no-repeat center center/cover;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: 0%;
+            bottom: 0%;
+            opacity: 0.9;
+        }
+        #basket{
+            height: 97vh;
+            width: 98vw;
+        }
+        #item1{
+            width: 38%;
+            border-top: 4px dashed orange;
+            border-bottom: 4px dotted pink;
+            border-left: 4px double blue;
+            border-right: 4px groove greenyellow;
+            margin: auto;
+            text-align: center;
+            padding: 9px 14px 9px 14px;
+            color: rgb(244, 252, 1);
+        }
+
+        #transition{
+            border: 2px solid black;
+            padding: 16px;
+            margin: auto;
+            background-color: rgba(130, 83, 174, 0.579);
+            width: 13%;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        #transition:hover{
+            background-color: rgb(249, 9, 4);
+            font-size: large;
+            width: 23%;
+            padding: 14px;
+            transform: rotate3d(1,0,1,-360deg);
+            transition: all 4000ms ease-in-out 100ms ;
+        }
+        
+        .box1{
+            background-color: rgb(213, 219, 205);
+            margin: auto;
+            margin-top: 70px;
+            width: 20%;
+        }
+
+        .box2{
+            background-color: rgb(238, 31, 8);
+            width: 150px;
+            height: 150px;
+            position: relative;
+            animation-name: dev;
+            animation-duration: 4s;
+            animation-iteration-count: 3;
+            animation-fill-mode: inherit;
+            animation-timing-function: ease-in;
+            animation-direction:normal;
+        }
+        @keyframes dev {
+            0%{
+                top: 0px;
+                left: 0px;
+                transform: rotate3d(1,1,0,30deg);
+            }
+            35%{
+                top: 140px;
+                left: 0px;
+                transform: rotate3d(1,1,0,80deg);
+            }
+            75%{
+                top: 140px;
+                left: 140px;
+                transform: rotate3d(1,1,0,180deg);
+            }
+            100%{
+                top: 0px;
+                left: 140px;
+                transform: rotate3d(1,0,1,360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="basket">
+        <div id="item1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quas sapiente delectus sed unde, velit numquam voluptate nostrum laborum architecto eveniet soluta! Impedit, explicabo enim. Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur .</div>
+
+        <div id="transition" >Transition</div>
+
+        <div class="box1">
+            <div class="box2"></div>
+        </div>
+        
+    </div>
+</body>
+</html>

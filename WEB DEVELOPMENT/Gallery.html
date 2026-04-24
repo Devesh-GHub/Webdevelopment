@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+    <title>University Gallery</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #6b63ff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #21212a;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        * {
+            margin-top: 0%;
+            margin-left: 0%;
+            margin-right: 0%;
+        }
+
+        #head {
+            display: flex;
+            /* border: 2px solid red; */
+            background-color: rgb(255, 248, 248);
+        }
+
+        #head h2 {
+            margin-top: 22px;
+            margin-left: 14px;
+            color: purple;
+        }
+
+        #inBox1 li {
+            list-style: none;
+
+        }
+
+        #inBox1 {
+            display: flex;
+            margin-bottom: 58px;
+            margin-top: 14px;
+
+        }
+
+        #h_6 {
+            list-style: none;
+            width: 33px;
+            height: 33px;
+        }
+
+        #h_6 img {
+            width: 126px;
+            height: 55px;
+        }
+
+        #h_7 {
+            list-style: none;
+            margin-top: 20px;
+
+        }
+
+        #h_7 a {
+            margin-left: 270px;
+            margin-right: 4px;
+            margin-top: 4px;
+            text-decoration: none;
+            color: purple;
+            font-size: large;
+        }
+
+        #h_9 {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        #h_9 a {
+            margin-left: 30px;
+            margin-right: 4px;
+            text-decoration: none;
+            color: purple;
+            font-size: large;
+        }
+
+        #h_10 {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        #h_10 a {
+            margin-left: 30px;
+            margin-right: 4px;
+            text-decoration: none;
+            color: purple;
+            font-size: large;
+        }
+
+        #form {
+            display: block;
+            width: 40%;
+            margin: auto;
+            height: 85%;
+        }
+
+        #box2 ::after {
+            content: " ";
+            position: absolute;
+            background: url('./Images/student_backgroung_img.jpg') no-repeat center center/cover;
+            height: 90%;
+            width: 100%;
+            z-index: -1;
+            top: 0%;
+            left: 0%;
+            margin-top: 159px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="head">
+        <h2>Gallery</h2>
+    </header>
+    <div id="box2">
+        <ul id="inBox1">
+            <li id="h_6">
+                <img src="./Images/Shiksha_logo.png" alt="SHIKSHA">
+            </li>
+            <li id="h_7"> <a href="Webtechnology_Assignment_01.html">Home</a></li>
+            <li id="h_9"><a href="Academics.html">Academics </a></li>
+            <li id="h_10"> <a href="Admission.html">Admission</a></li>
+        </ul>
+    </div>
+
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="./Images/GALLARY_01.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="./Images/GALARRY_02.jpg" alt="Image 2" style="height: 426px;">
+        </div>
+        <div class="gallery-item">
+            <img src="./Images/Galarry_03.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="./Images/Galarry_04.jpg" alt="Image 4">
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 University Gallery
+    </footer>
+</body>
+
+</html>

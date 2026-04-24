@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JSON Loading</title>
+    <link rel="stylesheet" href="my_data.json">
+</head>
+<body>
+
+<h1>Asynchronous JSON Loading Example</h1>
+<div id="data-container"></div>
+
+<script>
+    // Function to fetch and handle JSON data
+    async function fetchData() {
+        try {
+            
+            const response = await fetch('C:/Users/Devesh/OneDrive/Desktop/WEB DEVELOPMENT/my_data.json'); // Replace with your JSON file URL
+            const data = await response.json();
+
+            // Process the JSON data
+            handleData(data);
+        } catch (error) {
+            console.error('Error fetching JSON data:', error);
+        }
+    }
+
+    // Function to handle the JSON data
+    function handleData(data) {
+
+        const dataContainer = document.getElementById('data-container');
+        dataContainer.innerHTML = '<h2>JSON Data:</h2><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+    }
+
+    // Call the fetchData function when the page is loaded
+    document.addEventListener('DOMContentLoaded', fetchData);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>8-Puzzle Game</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    #puzzle {
+      border: 2px solid #333;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #puzzle td {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-size: 28px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s ease;
+    }
+
+    #puzzle td:hover {
+      background-color: #e0e0e0;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+      background-color: #ff4e43;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the 8-Puzzle Problem</h1>
+  <table id="puzzle">
+    <tr>
+      <td onclick="moveTile(this)"></td>
+      <td onclick="moveTile(this)"></td>
+      <td onclick="moveTile(this)"></td>
+    </tr>
+    <tr>
+      <td onclick="moveTile(this)"></td>
+      <td onclick="moveTile(this)"></td>
+      <td onclick="moveTile(this)"></td>
+    </tr>
+    <tr>
+      <td onclick="moveTile(this)"></td>
+      <td onclick="moveTile(this)"></td>
+      <td onclick="moveTile(this)"></td>
+    </tr>
+  </table>
+  <button onclick="scramblePuzzle()" class="button">Scramble</button>
+  <button onclick="solvePuzzle()" class="button">Solve</button>
+
+  <!-- <script>
+    const puzzle = document.getElementById('puzzle');
+    const cells = Array.from(puzzle.getElementsByTagName('td'));
+
+    let emptyCellIndex = 8;
+
+    function moveTile(cell) {
+      const cellIndex = cells.indexOf(cell);
+      if (isAdjacent(cellIndex, emptyCellIndex)) {
+        swapCells(cellIndex, emptyCellIndex);
+        emptyCellIndex = cellIndex;
+      }
+    }
+
+    function isAdjacent(cellIndex, emptyCellIndex) {
+      const rowDiff = Math.floor(cellIndex / 3) - Math.floor(emptyCellIndex / 3);
+      const colDiff = cellIndex % 3 - emptyCellIndex % 3;
+      return Math.abs(rowDiff) + Math.abs(colDiff) === 1;
+    }
+
+    function swapCells(index1, index2) {
+      [cells[index1].textContent, cells[index2].textContent] = [cells[index2].textContent, cells[index1].textContent];
+    }
+
+    function shufflePuzzle() {
+      const numbers = Array.from({ length: 9 }, (_, i) => i + 1);
+      numbers[8] = '';
+
+      for (let i = numbers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+      }
+
+      numbers.forEach((number, index) => {
+        cells[index].textContent = number;
+        if (number === '') {
+          emptyCellIndex = index;
+        }
+      });
+    }
+
+    function solvePuzzle() {
+      alert('Thank You!!');
+    }
+
+    shufflePuzzle();
+  </script> -->
+
+  <script>
+    const puzzle = document.getElementById('puzzle');
+    const cells = Array.from(puzzle.getElementsByTagName('td'));
+  
+    let emptyCellIndex = 8;
+    let moves = 0; 
+  
+    function moveTile(cell) {
+      const cellIndex = cells.indexOf(cell);
+      if (isAdjacent(cellIndex, emptyCellIndex)) {
+        swapCells(cellIndex, emptyCellIndex);
+        emptyCellIndex = cellIndex;
+        moves++; 
+        updateMovesDisplay(); 
+      }
+    }
+  
+    function isAdjacent(cellIndex, emptyCellIndex) {
+      const rowDiff = Math.floor(cellIndex / 3) - Math.floor(emptyCellIndex / 3);
+      const colDiff = cellIndex % 3 - emptyCellIndex % 3;
+      return Math.abs(rowDiff) + Math.abs(colDiff) === 1;
+    }
+  
+    function swapCells(index1, index2) {
+      [cells[index1].textContent, cells[index2].textContent] = [cells[index2].textContent, cells[index1].textContent];
+    }
+  
+    function shufflePuzzle() {
+      const numbers = Array.from({ length: 9 }, (_, i) => i + 1);
+      numbers[8] = '';
+      moves = 0; 
+  
+      for (let i = numbers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+      }
+  
+      numbers.forEach((number, index) => {
+        cells[index].textContent = number;
+        if (number === '') {
+          emptyCellIndex = index;
+        }
+      });
+  
+      updateMovesDisplay(); 
+    }
+  
+    function solvePuzzle() {
+      alert('Congrulations!! You solved the puzzle in ' + moves + ' moves.');
+    }
+  
+    function updateMovesDisplay() {
+      const movesDisplay = document.getElementById('moves-display');
+      movesDisplay.textContent = 'Moves: ' + moves;
+    }
+  
+    shufflePuzzle();
+  </script>
+  
+</body>
+</html>
+

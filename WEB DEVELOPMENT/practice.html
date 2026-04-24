@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">This is AJAX</h1>
+    <button id="b1" onclick="load()">ClickHere</button>
+    <script>
+        function load(){
+            var hit = new XMLHttpRequest();
+            hit.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById("h1").innerHTML = this.responseText;
+                }
+            };
+            hit.open("GET","ajax.txt?fname=Devesh&&lname=SS",true);
+            hit.send();
+
+        }
+    </script>
+</body>
+</html>

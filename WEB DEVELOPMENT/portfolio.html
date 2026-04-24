@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dev's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,700&family=Exo+2:ital,wght@0,500;1,600&family=Geologica:wght@400;500&family=Jomhuria&family=Josefin+Sans:ital,wght@1,300&family=Poppins:wght@600;700&family=Raleway:wght@900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            background-color: rgb(7, 7, 35);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(8, 8, 42);
+        }
+
+        ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(114, 114, 216);
+            font-size: 1.03rem;
+        }
+
+        .right {
+            font-size: 1.25rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 23px 0;
+        }
+
+        .leftSection {
+            margin-top: 84px;
+            width: 30%;
+            /* background-color: aqua; */
+            font-size: 1.6rem;
+        }
+
+        #dev {
+            color: rgb(200, 52, 200);
+            font-size: 1.8rem;
+        }
+
+        #ele {
+            color: rgb(110, 156, 196);
+        }
+
+        .rightSection {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rightSection {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #007acc, #00d6e4);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            color: #333;
+            margin-top: 150px;
+        }
+
+        .rightSection:hover {
+            transform: scale(1.05);
+            /* Enlarge on hover */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            /* Shadow on hover */
+        }
+
+        #bio img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            margin-top: -50px;
+        }
+
+        #bio p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .rightSection a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .rightSection a:hover {
+            color: #007acc;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="right">Dev's Portfolio</div>
+            <div class="left">
+                <ul>
+                    <li><a href="portfolio.html">About Me</a></li>
+                    <li><a href="Favourites.html">Favourites</a></li>
+                    <li><a href="hobby.html">Hobby</a></li>
+                    <li><a href="Education.html">Education</a></li>
+                    <li><a href="Contact_Me.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi,My name is <span id="dev">Devesh</span>
+                <div>I'm a DataScientist Student</div>
+                <span id="ele"></span>
+            </div>
+            <div class="rightSection">
+                <div id="bio">
+                    <div id="pic"><img
+                            src="https://img.freepik.com/free-vector/man-wearing-glasses-smiling-head_1308-140495.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1698969600&semt=ais"
+                            alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis molestiae, optio est provident perspiciatis sapiente deleniti obcaecati ipsum corrupti, necessitatibus ea quidem libero autem?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed('#ele', {
+            strings: ['Passionated', 'Intensive', "Ardent"],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
